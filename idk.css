@@ -1,0 +1,296 @@
+/* Base styles (unchanged) */
+body {
+    width: 100%; /* Use full width */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+header {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7; /* Default opacity */
+}
+
+nav a:hover {
+    color: rgb(165, 0, 165); /* Color change on hover */
+    opacity: 0.8; /* Increase opacity on hover */
+}
+
+nav a:active {
+    color: rgb(165, 0, 165); /* Color change on click */
+    opacity: 0.6; /* Slightly decrease opacity on click */
+}
+
+h1 {
+    padding-left: 20px;
+    margin-left: 20px;
+    color: rgb(165, 0, 165);
+    font-size: xx-large;
+}
+
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10; /* Bring circles to the front */
+}
+
+.circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.3;
+    animation: moveCircle 10s infinite linear; /* Circle path animation */
+}
+
+@keyframes moveCircle {
+    0% {
+        transform: rotate(0deg) translateX(200px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+}
+
+.circle-green {
+    background-color: #b2e06f;
+    top: 10%;
+    left: 10%;
+}
+
+.circle-blue {
+    background-color: #7ed7d0;
+    top: 30%;
+    left: 30%;
+}
+
+.circle-orange {
+    background-color: #ffb347;
+    top: 50%;
+    left: 50%;
+}
+
+.circle-purple {
+    background-color: #cba6f7;
+    top: 70%;
+    left: 70%;
+}
+
+.circle-red {
+    background-color: #f78a8a;
+    top: 90%;
+    left: 90%;
+}
+
+.container {
+    width: 100%;
+    margin: 30px 0;
+    padding: 20px; /* Added padding for better spacing */
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    padding: 20px; /* Padding for sections */
+    margin: 20px 0;
+    border-radius: 25px;
+    transition: background-color 0.5s ease; /* Transition effect for background color */
+}
+
+#section2, #section4 {
+    width: 100%; /* Full width for smaller screens */
+    position: relative;
+    margin: 0 auto;
+}
+
+#section1, #section3, #section5 {
+    width: 100%; /* Full width for smaller screens */
+    position: relative;
+    margin: 0 auto;
+}
+
+hr {
+    border: 2px solid rgb(165, 0, 165);
+}
+
+.active-section {
+    background-color: #bbb7b7; /* Light gray color */
+}
+
+h2 {
+    font-size: 26px;
+    color: rgb(165, 0, 165);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%; /* Full width for responsiveness */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"], 
+input[type="email"], 
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(165, 0, 165); /* Button color */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(145, 0, 145); /* Darker shade on hover */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: x-large;
+        padding-left: 10px;
+        margin-left: 10px;
+    }
+
+    .circles .circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    section {
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: large;
+        padding-left: 5px;
+        margin-left: 5px;
+    }
+
+    .circles .circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .container {
+        padding: 5px;
+    }
+
+    section {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
